@@ -13,15 +13,17 @@ class MakeInstance {
    * * 객체 지향 언어에서 매우 중요한 개념 중 하나이다.
    * * 조금 더 객체지향언어 유저들의 용어로 '은닉화(private)'라고 부른다.
    */
+  // setter 메서드 : 'id'속성의 값을 설정할 때 호출된다.
   set id(value) {
     if(typeof(value) === "string") {
       this._id = value + "님";
+      // 만약 'value'가 문자열이 아닌 경우, 콘솔에 "id는 문자열이어야 합니다."라고 출력한다.
     } else {
       console.log("id는 문자열이어야 합니다.");
     }
   }
 }
-
+// 객체 생성
 const instance = new MakeInstance('test', 'password', 'email');
 /**
  * * 매개변수 0번째인 idValue 자리에 "test"라는 문자열을 담았다.
@@ -32,5 +34,6 @@ const instance = new MakeInstance('test', 'password', 'email');
  * * setter의 내부 객체 key 인 _언더바 형태로 만들어진 key는
  * * 정해진 조건에서만 '대입'이 가능하다.
  */
+
 console.log(instance);
 // MakeInstance { _id: 'test님', password: 'password', email: 'email' }
